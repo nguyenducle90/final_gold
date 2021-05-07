@@ -3,7 +3,7 @@ import pickle
 import sklearn
 import streamlit as st
 
-FILEPATH = os.path.join('H:\python project\program\python nang cao\demo\models\gold.model.pkl')
+FILEPATH = os.path.join('models','gold.model.pkl')
 def forecast(spx:float, uso: float, slv:float, eur_usd: float)->float:
     model = pickle.load(open(FILEPATH, 'rb'))
     results = model.predict([[spx, uso, slv, eur_usd]])
