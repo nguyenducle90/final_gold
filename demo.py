@@ -3,12 +3,11 @@ import pickle
 import sklearn
 import streamlit as st
 
-FILEPATH = os.path.join('models','gold.model.pkl')
+FILEPATH = os.path.join('H:\python project\program\python nang cao\demo\models\gold.model.pkl')
 def forecast(spx:float, uso: float, slv:float, eur_usd: float)->float:
     model = pickle.load(open(FILEPATH, 'rb'))
     results = model.predict([[spx, uso, slv, eur_usd]])
     return results[0]
-
 
 spx = st.slider('SPX', min_value=676.0, max_value=2873.0, step=0.1)
 uso = st.slider('USO', min_value=7.0, max_value=118.0, step=0.1)
