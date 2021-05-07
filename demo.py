@@ -5,7 +5,7 @@ import streamlit as st
 
 Filepath = os.path.join(os.getcwd(),'gold.model.pkl')
 def forecast(spx:float, uso: float, slv:float, eur_usd: float)->float:
-    model = pickle.load(open(FILEPATH, 'rb'))
+    model = pickle.load(open(Filepath, 'rb'))
     results = model.predict([[spx, uso, slv, eur_usd]])
     return results[0]
 
